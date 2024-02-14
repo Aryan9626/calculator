@@ -1,0 +1,28 @@
+---
+- name: Pull Docker Image from Docker Hub
+  hosts: localhost
+  become: false
+  remote_user: mint
+  tasks:
+    - name: Pull the "iiitb/calculator" image
+      docker_image:
+        name: "iiitb/calculator"
+        source: pull
+      register: docker_pull_result
+
+    - name: Show the status of the pull operation
+      debug:
+        msg: "Docker pull result: {{ docker_pull_result.msg }}"
+        var: docker_pull_result
+
+**--- 2. Start Docker Service ---**
+
+    - name: Start the Docker service if it's not already running
+      service:
+        name: docker
+        state: started
+
+**--- 3. Run Docker Container ---**
+
+    - name: Run the "iiitb/calculator" container in detached mode
+      shell: docker run -it -d --name calculator iiitb/calculator
