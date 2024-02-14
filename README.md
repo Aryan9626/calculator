@@ -76,5 +76,3 @@ done
 - The `bc` command is used for calculations.
 - Error handling is included for division by zero and invalid user input.
 - The script can be easily extended to include more features and operations.
-
-I hope this explanation helps you understand the code for this simple calculator program. Feel free to ask if you have any further questions!
