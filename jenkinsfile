@@ -44,8 +44,8 @@ pipeline {
           // Define registry credentials and tag the image with a specific name
           echo 'Tagging and pushing Docker image to Docker Hub...'
           docker.withRegistry('', 'DockerHubCred') {
-            sh 'docker tag calculator iiitb/calculator:latest'
-            sh 'docker push iiitb/calculator'
+            sh 'docker tag calculator aryan9626/calculator:latest'
+            sh 'docker push aryan9626/calculator'
           }
         }
       }
