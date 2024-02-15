@@ -1,28 +1,22 @@
 ---
 - name: Pull Docker Image from Docker Hub
   hosts: localhost
-  become: false
   remote_user: aryan9626
+  become: false
   tasks:
-    - name: Pull the "aryan9626/calculator" image
+    - name: Pull Docker Image
       docker_image:
         name: "aryan9626/calculator"
         source: pull
       register: docker_pull_result
 
-    - name: Show the status of the pull operation
+    - name: Display Docker Pull Result
       debug:
-        msg: "Docker pull result: {{ docker_pull_result.msg }}"
         var: docker_pull_result
-
-**--- 2. Start Docker Service ---**
-
-    - name: Start the Docker service if it's not already running
+        
+    - name: Start Docker service
       service:
         name: docker
         state: started
-
-**--- 3. Run Docker Container ---**
-
-    - name: Run the "aryan9626/calculator" container in detached mode
+    - name: Running container
       shell: docker run -it -d --name calculator aryan9626/calculator
