@@ -19,7 +19,7 @@ pipeline {
         script {
           // Retrieve the code from the specified Git repository
           echo 'Checking out code from the Git repository...'
-          git branch: 'main', url: "${GITHUB_REPO_URL}"
+          git branch: 'master', url: "${GITHUB_REPO_URL}"
         }
       }
     }
