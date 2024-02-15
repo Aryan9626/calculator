@@ -25,4 +25,4 @@
 **--- 3. Run Docker Container ---**
 
     - name: Run the "aryan9626/calculator" container in detached mode
-      shell: docker run -it -d --name calculator iiitb/calculator
+      shell: docker run -it -d --name calculator aryan9626/calculator
