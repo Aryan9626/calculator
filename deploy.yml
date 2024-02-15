@@ -2,11 +2,11 @@
 - name: Pull Docker Image from Docker Hub
   hosts: localhost
   become: false
-  remote_user: mint
+  remote_user: aryan9626
   tasks:
-    - name: Pull the "iiitb/calculator" image
+    - name: Pull the "aryan9626/calculator" image
       docker_image:
-        name: "iiitb/calculator"
+        name: "aryan9626/calculator"
         source: pull
       register: docker_pull_result
 
@@ -24,5 +24,5 @@
 
 **--- 3. Run Docker Container ---**
 
-    - name: Run the "iiitb/calculator" container in detached mode
+    - name: Run the "aryan9626/calculator" container in detached mode
       shell: docker run -it -d --name calculator iiitb/calculator
