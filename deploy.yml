@@ -3,9 +3,6 @@
   hosts: localhost
   remote_user: aryan9626
   become: false
-  gather_facts: no
-  vars:
-    ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
   tasks:
     - name: Pull Docker Image
       docker_image:
