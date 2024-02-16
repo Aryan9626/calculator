@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE_NAME = 'calculator'
+        DOCKER_IMAGE_NAME = 'aryan9626/calculator'
         GITHUB_REPO_URL = 'https://github.com/Aryan9626/calculator.git'
     }
 
@@ -29,8 +29,8 @@ pipeline {
             steps {
                 script{
                     docker.withRegistry('', 'DockerHubCred') {
-                    sh 'docker tag calculator aryan9626/calculator:latest'
-                    sh 'docker push aryan9626/calculator'
+                    sh 'docker tag aryan9626/calculator:latest aryan9626/calculator:latest'
+                    sh 'docker push aryan9626/calculator:latest'
                     }
                  }
             }
